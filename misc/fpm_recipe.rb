@@ -35,7 +35,7 @@ package.input("#{ENV['PACKAGE_DIR']}/planb=/usr/bin/")
 
 # Create two output packages!
 pleaserun = package.convert(FPM::Package::PleaseRun)
-pleaserun.input ["/usr/bin/planb"]
+pleaserun.input ["/usr/bin/planb $PLANB_OPTS"]
 output_packages = []
 output_packages << pleaserun.convert(FPM::Package::RPM)
 output_packages << pleaserun.convert(FPM::Package::Deb)
